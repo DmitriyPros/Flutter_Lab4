@@ -1,17 +1,33 @@
-# flutter_lab4_app
+# Лабораторная работа №4-5. Flutter: структура UI и компонентный подход
+## Просвиров Дмитрий Анатольевич. ИСП-241. 02.10.2026.
+***
+**Что изучили:**
+1. Настройка UI Flutter-приложения
+2. Классовый метод создания Flutter-приложения
+3. Импорт классов в другие dart-файлы
+4. Работа с `pubspec.yaml`
+5. Создание кнопок во Flutter-приложении
+***
 
-A new Flutter project.
+![Скриншот](/img/step6_Prosvirov.png)
 
-## Getting Started
+***
+[Ссылка на репозиторий](https://github.com/DmitriyPros/Flutter_Lab4)
+*** 
+**Инструкция по запуску:**
+1. Открыть файл проекта в VS
+2. Найти файл `main.dart` 
+3. Нажать на полупрозрачную кнопку `Run` или прописать в терминале `flutter run`, после чего выбрать, где запустить приложение
+***
+**Ответы на вопросы:**
+1. В реальных Flutter-приложениях деревья виджетов могут быть огромными — и держать всё в одном методе main() быстро становится неудобно.
+2. BuildContext — это "адрес" или "паспорт" виджета в дереве виджетов. Он сообщает Flutter, где именно находится данный виджет относительно других. Метод build() принимает его, потому что виджету нужно знать своё окружение (где он находится, какие данные от родителей ему доступны), чтобы правильно отрисоваться.
+3. StatelessWidget — это "закреплённый" виджет. Он не меняется. Примеры:
+    * Иконки
+    * Текст (заголовок)
+    * GradientContainer (в текущем виде) — он просто берет цвета и рисует градиент. Он сам не решает, когда менять цвета.
+    * Кнопка, которая просто передает нажатие наверх.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+StatefulWidget — это "живой" виджет. Он может меняться в ответ на действия пользователя или данные извне. Примеры: Галочка (Checkbox), поле ввода текста (TextField).
+4. Создание Random внутри функции при каждом нажатии кнопки будет создавать новый генератор случайных чисел. Это не критично, но менее эффективно.
+___
